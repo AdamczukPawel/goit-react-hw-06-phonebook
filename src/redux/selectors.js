@@ -1,13 +1,14 @@
-export const getContacts = store => {
-  if (store === undefined) {
+export const getContacts = state => {
+  if (state === undefined) {
     return;
   }
-  return store.contacts;
+  return state.contacts;
 };
 
-export const getFilter = store => {
-  if (store === undefined) {
+export const getFilter = state => {
+  if (state === undefined) {
     return;
   }
-  return store.filter;
+  console.log(state);
+  return state.filter;
 };

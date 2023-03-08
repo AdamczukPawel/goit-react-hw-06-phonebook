@@ -24,8 +24,13 @@ const contactsSlice = createSlice({
       const id = action.payload;
       return state.filter(task => task.id !== id);
     },
+    setContactsAction(state, action) {
+      const localStorageContacts = action.payload;
+      return (state = localStorageContacts);
+    },
   },
 });
 
-export const { addContactAction, deleteContactAction } = contactsSlice.actions;
+export const { addContactAction, deleteContactAction, setContactsAction } =
+  contactsSlice.actions;
 export const contactsReducer = contactsSlice.reducer;
