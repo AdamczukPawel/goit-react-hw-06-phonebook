@@ -14,10 +14,10 @@ export const ContactList = () => {
 
   const deleteContact = id => {
     dispatch(deleteContactAction(id));
-    localStorage.setItem(
-      'contacts',
-      JSON.stringify(contactsList.filter(contact => contact.id !== id))
-    );
+    // localStorage.setItem(
+    //   'contacts',
+    //   JSON.stringify(contactsList.filter(contact => contact.id !== id))
+    // );
   };
 
   return (

@@ -1,6 +1,19 @@
+function loadFromLocalStorage() {
+  try {
+    const serialisedState = localStorage.getItem('persistantState');
+    if (serialisedState === null) return undefined;
+    return JSON.parse(serialisedState);
+  } catch (e) {
+    console.warn(e);
+    return undefined;
+  }
+}
+
+const preloadedState = loadFromLocalStorage().contacts;
+
 const { createSlice } = require('@reduxjs/toolkit');
 
-const initialContactsState = [];
+const initialContactsState = preloadedState;
 
 const contactsSlice = createSlice({
   name: 'contacts',

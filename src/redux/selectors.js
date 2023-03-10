@@ -9,6 +9,5 @@ export const getFilter = state => {
   if (state === undefined) {
     return;
   }
-  console.log(state);
   return state.filter;
 };
