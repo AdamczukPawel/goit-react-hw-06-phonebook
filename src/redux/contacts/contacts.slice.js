@@ -9,11 +9,12 @@ function loadFromLocalStorage() {
   }
 }
 
-const preloadedState = loadFromLocalStorage().contacts;
+const preloadedState = loadFromLocalStorage();
 
 const { createSlice } = require('@reduxjs/toolkit');
 
-const initialContactsState = preloadedState;
+const initialContactsState =
+  preloadedState !== undefined ? preloadedState.contacts : [];
 
 const contactsSlice = createSlice({
   name: 'contacts',
